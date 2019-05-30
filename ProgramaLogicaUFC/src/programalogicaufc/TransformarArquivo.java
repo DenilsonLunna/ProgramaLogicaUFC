@@ -18,8 +18,7 @@ public class TransformarArquivo {
     public int qtdVertices;
     public ArrayList<String> arquivo;
     public List<Integer>[] grafo;
-    
-    
+
     public TransformarArquivo(String caminho) {
         qtdVertices = 0;
         TratarArquivo ta = new TratarArquivo();
@@ -29,23 +28,23 @@ public class TransformarArquivo {
     public List<Integer>[] transformarEmListaA() {
         if (arquivo != null) {
             //pegando quantidade de vertices e arestas do grafo
-            
+
             String[] linhaQuebrada = arquivo.get(0).split(" ");
             qtdVertices = Integer.parseInt(linhaQuebrada[2]);
-            
 
             //construindo grafo =============================================
-            //inicializando grafo - Lista de adgecência 
-            grafo = new LinkedList[qtdVertices+1];
+            //inicializando grafo - Lista de adgecência
+            grafo = new LinkedList[qtdVertices + 1];
             for (int j = 0; j < grafo.length; j++) {
                 grafo[j] = new LinkedList<Integer>();
             }
             for (int i = 1; i < arquivo.size(); i++) {
-               linhaQuebrada = arquivo.get(i).split(" ");
-               int verticeAtual = Integer.parseInt(linhaQuebrada[1]);
-               int vizinhoDoVerticeAtual = Integer.parseInt(linhaQuebrada[2]);
-               this.grafo[verticeAtual].add(vizinhoDoVerticeAtual);
-                
+                linhaQuebrada = arquivo.get(i).split(" ");
+                int verticeAtual = Integer.parseInt(linhaQuebrada[1]);
+                int vizinhoDoVerticeAtual = Integer.parseInt(linhaQuebrada[2]);
+                this.grafo[verticeAtual].add(vizinhoDoVerticeAtual);
+                this.grafo[vizinhoDoVerticeAtual].add(verticeAtual);
+
             }
         }
         return grafo;
