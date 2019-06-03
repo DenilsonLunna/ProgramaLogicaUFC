@@ -55,5 +55,41 @@ public class TransformarArquivo {
         return this.transformarEmListaA();
 
     }
+    
+    public void gerarValoracao(ArrayList<String> valor, geraClausulas gera){
+         String[] valorQuebrado = null;
+         ArrayList<Integer> lista = new ArrayList<>();
+
+        for (String string : valor) {
+            valorQuebrado = string.split(" ");
+            
+            for (int i = 0; i < valorQuebrado.length; i++) {
+                
+                lista.add(Integer.parseInt(valorQuebrado[i]));
+                
+            }
+            
+        }
+        
+        //pegando os numeros positivos da lista
+         ArrayList<Integer> numPositivos = new ArrayList<>();
+        for (Integer integer : lista) {
+            if(integer > 0){
+                numPositivos.add(integer);
+                System.out.println(integer);
+            }
+        }
+        
+        //mapeando no hashmap
+        
+        
+        for (Integer numPositivo : numPositivos) {
+            System.out.println("A clausula: "+gera.literais.get(numPositivo-1)+" e verdadeira");
+        }
+        
+        
+        
+       
+    }
 
 }

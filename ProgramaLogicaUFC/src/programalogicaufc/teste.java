@@ -7,6 +7,7 @@ package programalogicaufc;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  *
@@ -15,7 +16,8 @@ import java.util.Map;
 public class teste {
 
     public static void main(String[] args) {
-
+        Scanner tec = new Scanner(System.in);
+        
         String str = "-2_1v-1_1";
         String[] aux = str.split("v");
         System.out.println(aux.length);
@@ -29,6 +31,10 @@ public class teste {
             System.out.println(aux2[1]);
             System.out.println(aux[0].charAt(0));
         }
+        System.out.println("aqui");
+        
+        String str2 = tec.nextLine();
+        System.out.println(str2);
     }
-
+    
 }

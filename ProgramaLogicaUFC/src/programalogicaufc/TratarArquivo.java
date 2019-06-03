@@ -51,9 +51,9 @@ public class TratarArquivo {
         }
         return linhas;
     }
-    public void escreverArquivo(String nomeArquivo,ArrayList<String> linhas){
+    public void escreverArquivo(String caminhoDoArquivo,ArrayList<String> linhas){
         try {
-            FileOutputStream arquivotxt = new FileOutputStream(nomeArquivo+".txt");
+            FileOutputStream arquivotxt = new FileOutputStream(caminhoDoArquivo+".txt");
             PrintWriter pe = new PrintWriter(arquivotxt);
             
             for (int i = 0; i < linhas.size(); i++) {

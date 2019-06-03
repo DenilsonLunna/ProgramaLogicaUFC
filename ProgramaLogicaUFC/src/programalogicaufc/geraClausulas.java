@@ -17,10 +17,11 @@ import java.util.Map;
 public class geraClausulas {
 
     private List<String> clausulas = new ArrayList<>();
-    private Map<String, Integer> mp = new HashMap<String, Integer>();
-    private ArrayList<String> literais = new ArrayList<>();
+    public  Map<String, Integer> mp = new HashMap<String, Integer>();
+    public ArrayList<String> literais = new ArrayList<>();
     private ArrayList<String> fncs = new ArrayList<>();
-
+    
+   
     public List<String> geraListaDeClausulas(List<Integer>[] vertices, int cor) {
 
         if (cor == 1 && vertices.length > 1) {
@@ -36,7 +37,7 @@ public class geraClausulas {
                     }
                 }
             }
-
+            
             for (int i = 1; i < vertices.length; i++) {
                 String aux = "";
                 for (int j = 1; j <= cor; j++) {
@@ -64,6 +65,7 @@ public class geraClausulas {
         System.out.println("Hashmaps --------------------------------------------");
         for (int i = 0; i < literais.size(); i++) {
             mp.put(literais.get(i), i + 1);
+       
             System.out.println(mp.get(literais.get(i)));
         }
 
