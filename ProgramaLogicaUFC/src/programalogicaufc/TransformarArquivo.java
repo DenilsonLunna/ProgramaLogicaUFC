@@ -56,7 +56,7 @@ public class TransformarArquivo {
 
     }
     
-    public void gerarValoracao(ArrayList<String> valor, geraClausulas gera){
+    public void gerarValoracao(ArrayList<String> valor, geraClausulas gera, String nomeArquivo){
          String[] valorQuebrado = null;
          ArrayList<Integer> lista = new ArrayList<>();
 
@@ -64,7 +64,7 @@ public class TransformarArquivo {
             valorQuebrado = string.split(" ");
             
             for (int i = 0; i < valorQuebrado.length; i++) {
-                
+                System.out.println(valorQuebrado[i]);
                 lista.add(Integer.parseInt(valorQuebrado[i]));
                 
             }
@@ -76,17 +76,21 @@ public class TransformarArquivo {
         for (Integer integer : lista) {
             if(integer > 0){
                 numPositivos.add(integer);
-                System.out.println(integer);
+                
             }
         }
         
         //mapeando no hashmap
+        TratarArquivo ta = new TratarArquivo();
         
+        ArrayList<String> resultado = new ArrayList<>();
         
         for (Integer numPositivo : numPositivos) {
-            System.out.println("A clausula: "+gera.literais.get(numPositivo-1)+" e verdadeira");
+            
+            resultado.add("A clausula: "+gera.literais.get(numPositivo-1)+" e verdadeira");
+            
         }
-        
+        ta.escreverArquivo(nomeArquivo, resultado);
         
         
        

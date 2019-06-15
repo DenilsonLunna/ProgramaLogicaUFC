@@ -20,17 +20,18 @@ public class ProgramaLogicaUFC {
      */
     public static void main(String[] args) {
         Scanner tec = new Scanner(System.in);
-        TransformarArquivo trans = new TransformarArquivo("Instancias\\myciel5.col");
+        TransformarArquivo trans = new TransformarArquivo("Instancias\\queen10.col");
         List<Integer>[] grafo = trans.transformarEmListaA();
         geraClausulas gera = new geraClausulas();
-        gera.geraListaDeClausulas(grafo, 6);
+        gera.geraListaDeClausulas(grafo, 12);
         TratarArquivo ta = new TratarArquivo();
-        ta.escreverArquivo("myciel1_SAT.txt", gera.getFncs());
+        //ta.escreverArquivo("myciel1_SAT.txt", gera.getFncs());
         
+      String nomeArq = "queen10_12cores";
+       ArrayList<String> resultado = ta.lerArquivo("Instancias\\Resultados\\"+nomeArq+".txt");
+       
         
-       ArrayList<String> resultado = ta.lerArquivo("Instancias\\Resultados\\myciel5_6cores.txt");
-        
-       trans.gerarValoracao(resultado, gera);
+       trans.gerarValoracao(resultado, gera,nomeArq);
         
         
         

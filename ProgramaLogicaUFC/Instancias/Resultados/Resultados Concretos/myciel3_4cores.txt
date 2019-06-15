@@ -1,0 +1,11 @@
+A clausula: 1_2 e verdadeira
+A clausula: 2_3 e verdadeira
+A clausula: 3_2 e verdadeira
+A clausula: 4_4 e verdadeira
+A clausula: 5_3 e verdadeira
+A clausula: 6_1 e verdadeira
+A clausula: 7_4 e verdadeira
+A clausula: 8_4 e verdadeira
+A clausula: 9_1 e verdadeira
+A clausula: 10_1 e verdadeira
+A clausula: 11_3 e verdadeira

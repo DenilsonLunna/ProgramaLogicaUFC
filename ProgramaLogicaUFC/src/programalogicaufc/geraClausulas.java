@@ -66,12 +66,12 @@ public class geraClausulas {
         for (int i = 0; i < literais.size(); i++) {
             mp.put(literais.get(i), i + 1);
        
-            System.out.println(mp.get(literais.get(i)));
+            //System.out.println(mp.get(literais.get(i)));
         }
 
         System.out.println("Cláusulas --------------------------------------------");
         for (String clausula : clausulas) {
-            System.out.println(clausula);
+            //System.out.println(clausula);
         }
 
         converteClausulaFNC();
@@ -99,7 +99,7 @@ public class geraClausulas {
         fncs.add(0, "p cnf " + literais.size() + " " + clausulas.size());
         System.out.println("fncs ---------------------------------------");
         for (String l : fncs) {
-            System.out.println(l);
+            //System.out.println(l);
         }
     }
 
